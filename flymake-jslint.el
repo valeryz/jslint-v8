@@ -2,8 +2,7 @@
 
 (require 'flymake)
 
-(defcustom jslint-v8-shell (concat (getenv "HOME")
-				   "/.emacs.d/v8/shell")
+(defcustom jslint-v8-shell "/usr/local/bin/v8"
   "Javascript V8 shell program"
   :type 'string
   :group 'jslint-v8)
@@ -20,7 +19,7 @@
 		     'flymake-create-temp-inplace)))
     (list jslint-v8-shell
       (list "-e" (concat "var input_filename = \"" temp-file "\"")
-	    (concat jslint-v8-location "/fulljslint.js")
+	    (concat jslint-v8-location "/JSLint/jslint.js")
 	    (concat jslint-v8-location "/v8shell.js")))))
 
 (add-to-list 'flymake-allowed-file-name-masks
