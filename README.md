@@ -13,16 +13,10 @@ Assuming you install your emacs packages in `~/.emacs.d`:
 
 1. Put this package in `~/.emacs.d/jslint-v8`.
 
-2. Build V8 with the _shell sample_.
+2. Install V8 with the _shell sample_.
 
-    See [Google's instructions](http://code.google.com/intl/ru/apis/v8/build.html).
-    In short:
-    
-        cd ~/.emacs.d
-        svn checkout http://v8.googlecode.com/svn/trunk/ v8
-        cd v8
-        scons sample=shell
-    On my Mac OS 10.5, there are harmless warnings which nevertheless don't let V8 build, because Google uses `-Werror`. If this happens, edit the `SConstruct` file and remove the `-Werror` flag, then run scons.
+   On OS X:
+	    brew install v8
 
 3. Configure Emacs:
 
