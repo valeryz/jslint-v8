@@ -3,6 +3,7 @@
  */
 
 var outputErrors = function (errors) {
+    "use strict";
     var e, i, output = [];
     // debug("Handling " + errors.length + "errors" + '\n');
     function write(s) {
@@ -23,6 +24,10 @@ var outputErrors = function (errors) {
     return output.join('');
 };
 
-if (!JSLINT(read(input_filename), {})) {
+if (!JSLINT(read(input_filename), {
+    devel: true, predef: ["chrome", "print", "jquery", "$"],
+    sloppy: true, indent: false, browser: true
+})) {
     print(outputErrors(JSLINT.errors));
 }
+
